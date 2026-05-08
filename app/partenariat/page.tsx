@@ -6,137 +6,426 @@ export default function PartenariatPage() {
   return (
     <main className="bg-white text-gray-800">
 
-      {/* HERO PARTENARIAT */}
-      <section className="relative h-[60vh] min-h-[420px] flex items-center overflow-hidden">
+      {/* HERO PARTENARIAT PREMIUM */}
+      <section className="relative min-h-[85vh] overflow-hidden flex items-center bg-[#050E18]">
 
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#050E18] via-[#0B1F33] to-[#06263A]" />
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#020817] via-[#07111B] to-[#0B1F33]" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-8 text-white">
-          <h1 className="text-4xl md:text-5xl font-extrabold">
-            Partenariats & Collaboration
-          </h1>
+        {/* LIGHT EFFECTS */}
+        <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-[#0F4C75]/20 blur-3xl" />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full bg-[#F59E0B]/10 blur-3xl" />
 
-          <p className="mt-6 text-gray-300 max-w-3xl text-lg">
-            FuelControl s’inscrit dans une dynamique de collaboration
-            avec les institutions publiques, les autorités de régulation,
-            les opérateurs énergétiques et les partenaires techniques,
-            en vue de la modernisation et de la bonne gouvernance
-            des réseaux de stations-service.
-          </p>
-        </div>
-      </section>
+        {/* GRID */}
+        <div className="relative z-10 max-w-7xl mx-auto px-5 py-32 grid lg:grid-cols-[1fr_0.9fr] gap-20 items-center">
 
-      {/* CONTENU */}
-      <section className="py-28">
-        <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-20">
-
-          {/* TEXTE INSTITUTIONNEL */}
+          {/* LEFT */}
           <div>
-            <h2 className="text-3xl font-extrabold text-[#0F4C75]">
-              Une approche partenariale structurée
-            </h2>
 
-            <p className="mt-6 text-gray-600 leading-relaxed">
-              FuelControl est une plateforme digitale de pilotage opérationnel
-              et financier des réseaux de stations-service, conçue pour
-              répondre aux exigences de transparence, de traçabilité
-              et de performance dans le secteur énergétique.
+            {/* BADGE */}
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-sm text-gray-200 mb-8">
+              <div className="h-2 w-2 rounded-full bg-[#F59E0B]" />
+              Partenariats stratégiques & collaboration institutionnelle
+            </div>
+
+            {/* TITLE */}
+            <h1 className="text-4xl md:text-7xl font-black leading-[0.95] text-white max-w-4xl">
+              Construire ensemble
+              <span className="block text-[#F59E0B]">
+                les réseaux énergétiques
+              </span>
+              de demain
+            </h1>
+
+            {/* TEXT */}
+            <p className="mt-8 text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
+              FuelControl accompagne les opérateurs,
+              institutions et partenaires techniques dans
+              la transformation digitale, la supervision
+              et la gouvernance moderne des réseaux
+              de stations-service.
             </p>
 
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              Les partenariats envisagés s’inscrivent dans un cadre
-              institutionnel clair, respectant les réglementations
-              en vigueur et les standards de sécurité et de gouvernance.
-            </p>
+            {/* CTA */}
+            <div className="mt-10 flex flex-wrap gap-5">
 
-            <div className="mt-10 space-y-4 text-gray-700">
-              <p>✔️ Partenariats institutionnels et publics</p>
-              <p>✔️ Partenariats techniques et technologiques</p>
-              <p>✔️ Partenariats stratégiques et opérationnels</p>
+              <a
+                href="#partnership-form"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-[#F59E0B] px-5 py-4 font-black text-black hover:scale-105 transition-all duration-300"
+              >
+                Initier une collaboration
+
+                <span className="group-hover:translate-x-1 transition">
+                  →
+                </span>
+              </a>
+
+              <a
+                href="/"
+                className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4 font-semibold text-white hover:bg-white/10 transition-all duration-300"
+              >
+                Retour à la plateforme
+              </a>
+            </div>
+
+            {/* STATS */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+
+              {[
+                {
+                  value: "Enterprise",
+                  label: "Architecture scalable",
+                },
+                {
+                  value: "Temps réel",
+                  label: "Supervision continue",
+                },
+                {
+                  value: "Cloud",
+                  label: "Infrastructure sécurisée",
+                },
+                {
+                  value: "Multi-sites",
+                  label: "Pilotage réseau",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5"
+                >
+
+                  <h3 className="text-xl font-black text-[#F59E0B]">
+                    {item.value}
+                  </h3>
+
+                  <p className="mt-2 text-xs text-gray-400 leading-relaxed">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* FORMULAIRE PARTENARIAT */}
-          <div className="bg-[#F8FAFC] rounded-3xl p-10 shadow-xl border border-gray-100">
+          {/* RIGHT SIDE */}
+          <div className="relative">
 
-            <h3 className="text-xl font-bold text-[#0F4C75]">
-              Demande de partenariat
-            </h3>
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-[#0F4C75]/20 blur-3xl rounded-full scale-110" />
 
-            <p className="mt-2 text-sm text-gray-600">
-              Ce formulaire est destiné aux institutions et organisations
-              souhaitant initier une collaboration avec FuelControl.
-            </p>
+            {/* MAIN BLOCK */}
+            <div className="relative rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-2xl overflow-hidden shadow-2xl">
 
-            <form className="mt-8 space-y-6">
+              {/* TOP */}
+              <div className="border-b border-white/10 px-5 py-6 flex items-center justify-between">
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Organisation / Institution
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0F4C75]"
-                />
+                <div>
+
+                  <p className="text-sm text-gray-400">
+                    FuelControl Ecosystem
+                  </p>
+
+                  <h3 className="mt-2 text-2xl font-black text-white">
+                    Collaboration stratégique
+                  </h3>
+                </div>
+
+                <div className="flex items-center gap-3">
+
+                  <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse" />
+
+                  <span className="text-sm text-gray-300">
+                    Infrastructure active
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Nom et fonction
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0F4C75]"
-                />
+              {/* CONTENT */}
+              <div className="p-8 space-y-6">
+
+                {[
+                  {
+                    title: "Institutions & régulation",
+                    desc: "Appui à la gouvernance et à la supervision des réseaux énergétiques.",
+                  },
+                  {
+                    title: "Opérateurs & réseaux",
+                    desc: "Pilotage multi-sites et centralisation des opérations terrain.",
+                  },
+                  {
+                    title: "Partenaires technologiques",
+                    desc: "Interopérabilité, cloud sécurisé et transformation digitale.",
+                  },
+                  {
+                    title: "Partenaires financiers",
+                    desc: "Déploiement, accompagnement stratégique et montée en échelle.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-3xl border border-white/10 bg-[#09131F]/80 p-6"
+                  >
+
+                    <div className="flex items-start justify-between">
+
+                      <div>
+
+                        <h4 className="text-xl font-bold text-white">
+                          {item.title}
+                        </h4>
+
+                        <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      <div className="h-10 w-10 rounded-2xl bg-[#F59E0B]/10 border border-[#F59E0B]/20 flex items-center justify-center text-[#F59E0B] font-black">
+                        +
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Adresse email professionnelle
-                </label>
-                <input
-                  type="email"
-                  required
-                  className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0F4C75]"
-                />
+              {/* FOOTER */}
+              <div className="border-t border-white/10 px-5 py-5 flex items-center justify-between">
+
+                <div className="flex items-center gap-3">
+
+                  <div className="h-2 w-2 rounded-full bg-green-400" />
+
+                  <p className="text-sm text-gray-300">
+                    Réseau de collaboration ouvert
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* PARTNERSHIP CONTENT PREMIUM */}
+      <section
+        id="partnership-form"
+        className="relative py-24 overflow-hidden bg-gradient-to-b from-[#07111B] via-[#050E18] to-[#020817]"
+      >
+
+        {/* LIGHT EFFECTS */}
+        <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-[#0F4C75]/10 blur-3xl" />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full bg-[#F59E0B]/10 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-5">
+
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+
+            {/* LEFT SIDE */}
+            <div>
+
+              {/* BADGE */}
+              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-sm text-gray-200 mb-8">
+                <div className="h-2 w-2 rounded-full bg-[#F59E0B]" />
+                Gouvernance • Innovation • Collaboration
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Nature de la demande
-                </label>
-                <textarea
-                  rows={4}
-                  required
-                  className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0F4C75]"
-                  placeholder="Partenariat institutionnel, technique, stratégique…"
-                />
-              </div>
+              {/* TITLE */}
+              <h2 className="text-4xl md:text-4xl font-black leading-[1] text-white">
+                Une approche partenariale
+                <span className="block text-[#F59E0B]">
+                  structurée et scalable
+                </span>
+              </h2>
 
-              <button
-                type="submit"
-                className="w-full bg-[#F59E0B] text-black py-4 rounded-xl font-semibold hover:scale-[1.02] transition shadow-lg"
-              >
-                Soumettre la demande
-              </button>
-
-              <p className="text-xs text-gray-500 text-center">
-                Les informations transmises sont traitées de manière
-                confidentielle et utilisées uniquement dans le cadre
-                de l’étude de votre demande.
+              {/* TEXT */}
+              <p className="mt-8 text-lg text-gray-400 leading-relaxed max-w-xl">
+                FuelControl développe une infrastructure digitale
+                pensée pour accompagner les réseaux énergétiques
+                dans la modernisation des opérations,
+                la supervision centralisée et la gouvernance
+                des activités multi-sites.
               </p>
-            </form>
+
+              {/* FEATURES */}
+              <div className="mt-12 space-y-5">
+
+                {[
+                  {
+                    title: "Transformation digitale",
+                    desc: "Modernisation des opérations et centralisation des processus réseau.",
+                  },
+                  {
+                    title: "Pilotage stratégique",
+                    desc: "Supervision temps réel et reporting décisionnel avancé.",
+                  },
+                  {
+                    title: "Interopérabilité & cloud",
+                    desc: "Architecture moderne compatible avec les environnements enterprise.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6"
+                  >
+
+                    <div className="flex items-start justify-between">
+
+                      <div>
+
+                        <h3 className="text-xl font-bold text-white">
+                          {item.title}
+                        </h3>
+
+                        <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      <div className="h-10 w-10 rounded-2xl bg-[#F59E0B]/10 border border-[#F59E0B]/20 flex items-center justify-center text-[#F59E0B] font-black">
+                        +
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* ECOSYSTEM */}
+              <div className="mt-12">
+
+                <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-500">
+                  Écosystème FuelControl
+                </h3>
+
+                <div className="mt-6 flex flex-wrap gap-4">
+
+                  {[
+                    "Régulation",
+                    "Réseaux",
+                    "Cloud",
+                    "Analytics",
+                    "Temps réel",
+                    "Multi-sites",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-full border border-white/10 bg-[#09131F]/80 px-5 py-3 text-sm text-gray-300"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* FORM SIDE */}
+            <div className="relative">
+
+              {/* GLOW */}
+              <div className="absolute inset-0 bg-[#0F4C75]/10 blur-3xl rounded-full scale-110" />
+
+              {/* FORM CONTAINER */}
+              <div className="relative rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-2xl p-6 md:p-10 overflow-hidden">
+
+                {/* HEADER */}
+                <div className="mb-10">
+
+                  <h3 className="mt-6 text-3xl font-black text-white">
+                    Initier une collaboration
+                  </h3>
+
+                  <p className="mt-4 text-gray-400 leading-relaxed">
+                    Ce formulaire est destiné aux institutions,
+                    opérateurs, partenaires techniques et organisations
+                    souhaitant collaborer avec FuelControl.
+                  </p>
+                </div>
+
+                {/* FORM */}
+                <form className="space-y-6">
+
+                  {/* ORGANISATION */}
+                  <div>
+                    <label className="block text-sm text-gray-300 mb-3">
+                      Organisation / Institution
+                    </label>
+
+                    <input
+                      type="text"
+                      required
+                      placeholder="Nom de l’organisation"
+                      className="w-full rounded-2xl border border-white/10 bg-[#09131F]/80 px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transition"
+                    />
+                  </div>
+
+                  {/* NAME */}
+                  <div>
+                    <label className="block text-sm text-gray-300 mb-3">
+                      Nom & fonction
+                    </label>
+
+                    <input
+                      type="text"
+                      required
+                      placeholder="Votre nom et fonction"
+                      className="w-full rounded-2xl border border-white/10 bg-[#09131F]/80 px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transition"
+                    />
+                  </div>
+
+                  {/* EMAIL */}
+                  <div>
+                    <label className="block text-sm text-gray-300 mb-3">
+                      Adresse email professionnelle
+                    </label>
+
+                    <input
+                      type="email"
+                      required
+                      placeholder="email@organisation.com"
+                      className="w-full rounded-2xl border border-white/10 bg-[#09131F]/80 px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transition"
+                    />
+                  </div>
+
+                  {/* MESSAGE */}
+                  <div>
+                    <label className="block text-sm text-gray-300 mb-3">
+                      Nature de la collaboration
+                    </label>
+
+                    <textarea
+                      rows={5}
+                      required
+                      placeholder="Décrivez votre besoin, votre projet ou votre proposition de collaboration..."
+                      className="w-full rounded-2xl border border-white/10 bg-[#09131F]/80 px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transition resize-none"
+                    />
+                  </div>
+
+                  {/* BUTTON */}
+                  <button
+                    type="submit"
+                    className="group w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-[#F59E0B] px-5 py-5 font-black text-black hover:scale-[1.02] transition-all duration-300"
+                  >
+                    Soumettre la demande
+
+                    <span className="group-hover:translate-x-1 transition">
+                      →
+                    </span>
+                  </button>
+
+                  {/* FOOTNOTE */}
+                  <p className="text-center text-xs text-gray-500 leading-relaxed">
+                    Les informations transmises sont traitées de manière
+                    confidentielle et utilisées uniquement dans le cadre
+                    des échanges liés à FuelControl.
+                  </p>
+                </form>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="bg-[#050E18] text-gray-400 py-16">
-        <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-5 grid md:grid-cols-3 gap-12">
 
           {/* BRAND */}
           <div>
@@ -156,7 +445,7 @@ export default function PartenariatPage() {
               Navigation
             </h4>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white">Accueil</a></li>
+              <li><a href="/" className="hover:text-white">Accueil</a></li>
               <li><a href="#solution" className="hover:text-white">Solution</a></li>
               <li><a href="/partenariat" className="hover:text-white">Partenariats</a></li>
               <li><a href="#contact" className="hover:text-white">Contact</a></li>

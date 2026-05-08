@@ -7,7 +7,7 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#050E18] via-[#0B1F33] to-[#06263A] px-6">
 
       {/* Card */}
-      <div className="w-full max-w-md bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-10 border border-gray-100">
+      <div className="w-full max-w-md bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-6 md:p-10 border border-gray-100">
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
@@ -75,7 +75,7 @@ export default function LoginPage() {
         {/* Back link */}
         <div className="mt-6 text-center">
           <a
-            href="https://fuelcontrol.sn"
+            href="/"
             className="text-sm text-[#0F4C75] hover:underline"
           >
             ← Retour au site FuelControl
