@@ -1,26 +1,254 @@
 @import "tailwindcss";
 
+/* =========================================================
+   THEME — STATION SERVICE SaaS
+========================================================= */
+
 :root {
+  /* Backgrounds */
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #f8fafc;
+
+  /* Text */
+  --foreground: #0f172a;
+  --foreground-soft: #475569;
+
+  /* Brand */
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+
+  /* Enterprise Blue */
+  --secondary: #2563eb;
+  --secondary-dark: #0f172a;
+
+  /* Borders */
+  --border: #e2e8f0;
+
+  /* Cards */
+  --card: #ffffff;
+
+  /* Success */
+  --success: #16a34a;
+
+  /* Warning */
+  --warning: #f59e0b;
+
+  /* Danger */
+  --danger: #dc2626;
 }
+
+/* =========================================================
+   TAILWIND THEME
+========================================================= */
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+
   --color-foreground: var(--foreground);
+  --color-foreground-soft: var(--foreground-soft);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+
+  --color-border: var(--border);
+  --color-card: var(--card);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+p {
+  color: var(--foreground-soft);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PREMIUM CONTAINERS
+========================================================= */
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* =========================================================
+   PREMIUM CARDS
+========================================================= */
+
+.premium-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  box-shadow:
+    0 4px 6px rgba(15, 23, 42, 0.04),
+    0 10px 30px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 20px rgba(15, 23, 42, 0.08),
+    0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   PREMIUM BUTTONS
+========================================================= */
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--secondary-dark);
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+/* =========================================================
+   PREMIUM GRADIENTS
+========================================================= */
+
+.hero-gradient {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(249, 115, 22, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.10),
+      transparent 35%
+    ),
+    white;
+}
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.grid-background {
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
