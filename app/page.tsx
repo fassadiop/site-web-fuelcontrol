@@ -2558,7 +2558,7 @@ export default function Home() {
 
                   <div>
                     <h3 className="text-4xl font-black text-slate-900">
-                      Multi-
+                      Multi
                     </h3>
 
                     <p className="mt-2 text-sm font-medium text-slate-500">
@@ -3172,7 +3172,6 @@ export default function Home() {
                   "Analytics",
                   "Audit-ready",
                   "Temps réel",
-                  "Cloud SaaS",
                 ].map((item) => (
                   <div
                     key={item}
