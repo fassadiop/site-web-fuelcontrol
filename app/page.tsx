@@ -377,7 +377,7 @@ export default function Home() {
               className="
                 mt-8
                 max-w-5xl
-                text-5xl
+                text-4xl md:text-5xl lg:text-6xl
                 font-black
                 leading-[0.95]
                 tracking-[-0.05em]
@@ -615,7 +615,7 @@ export default function Home() {
         className="
           relative
           overflow-hidden
-          bg-[#F8FAFC]
+          bg-slate-100
           py-32
         "
       >
@@ -902,7 +902,7 @@ export default function Home() {
             </div>
 
             {/* RIGHT */}
-            <div className="premium-card overflow-hidden bg-[#F8FAFC] p-10">
+            <div className="premium-card overflow-hidden bg-slate-100 p-10">
 
               <div
                 className="
@@ -938,7 +938,6 @@ export default function Home() {
                   "SUPERADMIN",
                   "GERANT",
                   "SUPERVISEUR",
-                  "CAISSIER",
                   "POMPISTE",
                 ].map((role) => (
                   <div
@@ -1409,7 +1408,7 @@ export default function Home() {
         className="
           relative
           overflow-hidden
-          bg-[#F8FAFC]
+          bg-slate-100
           py-32
         "
       >
@@ -1970,7 +1969,7 @@ export default function Home() {
                 depuis une seule plateforme centralisée.
               </p>
 
-              <div className="mt-8 h-2 w-full rounded-full bg-slate-100">
+              <div className="mt-8 h-2 w-full rounded-full bg-[#90EE90]">
                 <div className="h-2 w-[89%] rounded-full text-white" />
               </div>
 
@@ -1999,7 +1998,7 @@ export default function Home() {
                 ERP Vertical Énergétique
               </div>
 
-              <h3 className="mt-8 text-5xl font-black leading-tight tracking-[-0.04em] text-slate-900">
+              <h3 className="mt-8 text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.04em] text-slate-900">
                 Pensé pour
                 <span className="block text-[#F97316]">
                   les opérations terrain réelles
@@ -2077,7 +2076,7 @@ export default function Home() {
               <h3
                 className="
                   mt-8
-                  text-5xl
+                  text-4xl md:text-5xl lg:text-6xl
                   font-black
                   leading-tight
                   tracking-[-0.04em]
@@ -2144,7 +2143,7 @@ export default function Home() {
         className="
           relative
           overflow-hidden
-          bg-[#F8FAFC]
+          bg-slate-100
           py-32
         "
       >
@@ -2332,7 +2331,7 @@ export default function Home() {
               <h2
                 className="
                   mt-8
-                  text-5xl
+                  text-4xl md:text-5xl lg:text-6xl
                   font-black
                   leading-tight
                   tracking-[-0.04em]
@@ -2482,7 +2481,7 @@ export default function Home() {
                 <h2
                   className="
                     mt-8
-                    text-5xl
+                    text-4xl md:text-5xl lg:text-6xl
                     font-black
                     leading-tight
                     tracking-[-0.05em]
@@ -2748,7 +2747,7 @@ export default function Home() {
         className="
           relative
           overflow-hidden
-          bg-[#F8FAFC]
+          bg-slate-100
           py-32
         "
       >
@@ -2779,7 +2778,7 @@ export default function Home() {
             <h2
               className="
                 mt-8
-                text-5xl
+                text-4xl md:text-5xl lg:text-6xl
                 font-black
                 leading-tight
                 tracking-[-0.04em]
@@ -3269,7 +3268,7 @@ export default function Home() {
             <div>
 
               <p className="text-sm font-medium text-slate-500">
-                © 2026 FuelControl. Tous droits réservés.
+                © 2026 FuelControl by SYNERA. Tous droits réservés.
               </p>
 
               <p className="mt-2 text-sm text-slate-400">
