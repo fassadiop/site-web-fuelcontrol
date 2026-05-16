@@ -51,9 +51,10 @@ export default function Home() {
       }
     } catch (err) {
       setError(true);
-    }
+    } finally {
 
-    setLoading(false);
+      setLoading(false);
+    }
   };
 
   return (
@@ -419,7 +420,7 @@ export default function Home() {
 
               <div>
                 <div className="text-3xl font-black text-slate-900">
-                  Multi-
+                  Multi
                 </div>
 
                 <div className="text-sm font-medium text-slate-500">
@@ -582,8 +583,8 @@ export default function Home() {
             <div
               className="
                 absolute
-                -bottom-10
-                -left-10
+                -bottom-15
+                -left-30
                 hidden
                 rounded-3xl
                 border border-slate-200
@@ -2982,7 +2983,10 @@ export default function Home() {
               </p>
 
               {/* FORM */}
-              <div className="mt-10 space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="mt-10 space-y-6"
+              >
 
                 {/* INPUT */}
                 <div>
@@ -3005,6 +3009,8 @@ export default function Home() {
                       focus:border-[#F97316]
                       focus:bg-white
                     "
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
@@ -3029,6 +3035,8 @@ export default function Home() {
                       focus:border-[#F97316]
                       focus:bg-white
                     "
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
@@ -3053,6 +3061,8 @@ export default function Home() {
                       focus:border-[#F97316]
                       focus:bg-white
                     "
+                    value={organisation}
+                    onChange={(e) => setOrganisation(e.target.value)}
                   />
                 </div>
 
@@ -3077,6 +3087,8 @@ export default function Home() {
                       focus:border-[#F97316]
                       focus:bg-white
                     "
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
 
@@ -3094,9 +3106,40 @@ export default function Home() {
                     hover:bg-[#EA580C]
                   "
                 >
-                  Demander une démonstration
+                  {loading
+                    ? "Envoi en cours..."
+                    : "Demander une démonstration"}
                 </button>
-              </div>
+
+                {success && (
+                  <div
+                    className="
+                      rounded-2xl
+                      border border-green-200
+                      bg-green-50
+                      px-5 py-4
+                      text-sm font-semibold text-green-700
+                    "
+                  >
+                    Votre demande a été envoyée avec succès.
+                  </div>
+                )}
+
+                {error && (
+                  <div
+                    className="
+                      rounded-2xl
+                      border border-red-200
+                      bg-red-50
+                      px-5 py-4
+                      text-sm font-semibold text-red-700
+                    "
+                  >
+                    Une erreur est survenue.
+                  </div>
+                )}
+
+              </form>
             </div>
           </div>
         </div>
