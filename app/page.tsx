@@ -1258,85 +1258,152 @@ export default function Home() {
                   {/* STEP 3 */}
                   <div className="relative flex flex-col gap-8 lg:flex-row lg:gap-14">
 
+                    {/* DOT */}
                     <div
                       className="
                         relative z-10
                         hidden h-10 w-10 items-center justify-center
                         rounded-full
-                        text-white
-                        text-sm font-black text-slate-900
+                        bg-emerald-500
+                        text-sm font-black text-white
+                        shadow-lg shadow-emerald-500/30
                         lg:flex
                       "
                     >
                       3
                     </div>
 
-                    <div className="flex-1 rounded-3xl text-white p-8">
+                    {/* CARD */}
+                    <div
+                      className="
+                        relative overflow-hidden
+                        flex-1
+                        rounded-3xl
+                        border border-emerald-200
+                        bg-gradient-to-br
+                        from-emerald-50
+                        via-white
+                        to-emerald-100
+                        p-8
+                      "
+                    >
 
-                      <div className="flex flex-wrap items-center justify-between gap-5">
+                      {/* GLOW */}
+                      <div
+                        className="
+                          absolute -right-24 -top-24
+                          h-72 w-72
+                          rounded-full
+                          bg-emerald-300/20
+                          blur-3xl
+                        "
+                      />
 
-                        <div>
-                          <p className="text-sm font-bold uppercase tracking-wider text-orange-400">
-                            FINANCES
-                          </p>
+                      <div className="relative z-10">
 
-                          <h4 className="mt-3 text-2xl font-black text-slate-900">
-                            Consolidation automatique
-                          </h4>
+                        <div className="flex flex-wrap items-center justify-between gap-5">
+
+                          <div>
+                            <p
+                              className="
+                                text-sm font-bold uppercase tracking-wider
+                                text-emerald-700
+                              "
+                            >
+                              FINANCES
+                            </p>
+
+                            <h4 className="mt-3 text-2xl font-black text-slate-900">
+                              Consolidation automatique
+                            </h4>
+                          </div>
+
+                          <div
+                            className="
+                              rounded-2xl
+                              border border-emerald-200
+                              bg-white
+                              px-4 py-2
+                              text-sm font-bold text-emerald-700
+                              shadow-sm
+                            "
+                          >
+                            TRANSFÉRÉ
+                          </div>
                         </div>
 
-                        <div
+                        <p
                           className="
-                            rounded-2xl
-                            bg-white/10
-                            px-4 py-2
-                            text-sm font-bold text-slate-900
+                            mt-6
+                            max-w-3xl
+                            text-lg leading-relaxed
+                            text-slate-600
                           "
                         >
-                          TRANSFÉRÉ
-                        </div>
-                      </div>
+                          FuelControl génère automatiquement
+                          les flux financiers,
+                          les consolidations réseau,
+                          les indicateurs KPI
+                          et les dashboards analytiques
+                          à partir des faits validés.
+                        </p>
 
-                      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
-                        FuelControl génère automatiquement
-                        les flux financiers,
-                        les consolidations réseau,
-                        les indicateurs KPI
-                        et les dashboards analytiques
-                        à partir des faits validés.
-                      </p>
+                        {/* STATS */}
+                        <div className="mt-10 grid gap-5 md:grid-cols-3">
 
-                      {/* STATS */}
-                      <div className="mt-10 grid gap-5 md:grid-cols-3">
+                          <div
+                            className="
+                              rounded-2xl
+                              border border-emerald-200
+                              bg-white/80
+                              p-5
+                              backdrop-blur-sm
+                            "
+                          >
+                            <p className="text-sm text-slate-500">
+                              Génération
+                            </p>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                          <p className="text-sm text-slate-400">
-                            Génération
-                          </p>
+                            <h5 className="mt-2 text-xl font-black text-slate-900">
+                              Automatique
+                            </h5>
+                          </div>
 
-                          <h5 className="mt-2 text-xl font-black text-slate-900">
-                            Automatique
-                          </h5>
-                        </div>
+                          <div
+                            className="
+                              rounded-2xl
+                              border border-emerald-200
+                              bg-white/80
+                              p-5
+                              backdrop-blur-sm
+                            "
+                          >
+                            <p className="text-sm text-slate-500">
+                              Consolidation
+                            </p>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                          <p className="text-sm text-slate-400">
-                            Consolidation
-                          </p>
+                            <h5 className="mt-2 text-xl font-black text-slate-900">
+                              Multi-stations
+                            </h5>
+                          </div>
 
-                          <h5 className="mt-2 text-xl font-black text-slate-900">
-                            Multi-stations
-                          </h5>
-                        </div>
+                          <div
+                            className="
+                              rounded-2xl
+                              border border-emerald-200
+                              bg-white/80
+                              p-5
+                              backdrop-blur-sm
+                            "
+                          >
+                            <p className="text-sm text-slate-500">
+                              Reporting
+                            </p>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                          <p className="text-sm text-slate-400">
-                            Reporting
-                          </p>
-
-                          <h5 className="mt-2 text-xl font-black text-slate-900">
-                            Temps réel
-                          </h5>
+                            <h5 className="mt-2 text-xl font-black text-slate-900">
+                              Temps réel
+                            </h5>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1355,46 +1422,192 @@ export default function Home() {
                 "
               >
 
-                <div className="grid gap-8 lg:grid-cols-4">
+                <div className="grid gap-5 lg:grid-cols-4">
 
-                  <div>
-                    <p className="text-sm font-medium text-slate-500">
-                      Workflow
-                    </p>
+                  {/* ITEM */}
+                  <div
+                    className="
+                      relative overflow-hidden
+                      rounded-3xl
+                      border border-slate-200
+                      bg-white
+                      p-6
+                      shadow-sm
+                    "
+                  >
 
-                    <h4 className="mt-3 text-2xl font-black text-slate-900">
-                      BROUILLON
-                    </h4>
+                    <div
+                      className="
+                        absolute right-0 top-0
+                        h-24 w-24
+                        rounded-full
+                        bg-orange-100/60
+                        blur-2xl
+                      "
+                    />
+
+                    <div className="relative z-10">
+
+                      <div
+                        className="
+                          inline-flex items-center justify-center
+                          rounded-xl
+                          bg-orange-100
+                          px-3 py-2
+                          text-xs font-black text-orange-700
+                        "
+                      >
+                        01
+                      </div>
+
+                      <p className="mt-5 text-sm font-semibold text-slate-500">
+                        Workflow
+                      </p>
+
+                      <h4 className="mt-2 text-2xl font-black text-slate-900">
+                        BROUILLON
+                      </h4>
+                    </div>
                   </div>
 
-                  <div>
-                    <p className="text-sm font-medium text-slate-500">
-                      Validation
-                    </p>
+                  {/* ITEM */}
+                  <div
+                    className="
+                      relative overflow-hidden
+                      rounded-3xl
+                      border border-blue-200
+                      bg-blue-50
+                      p-6
+                      shadow-sm
+                    "
+                  >
 
-                    <h4 className="mt-3 text-2xl font-black text-slate-900">
-                      SOUMIS
-                    </h4>
+                    <div
+                      className="
+                        absolute right-0 top-0
+                        h-24 w-24
+                        rounded-full
+                        bg-blue-200/40
+                        blur-2xl
+                      "
+                    />
+
+                    <div className="relative z-10">
+
+                      <div
+                        className="
+                          inline-flex items-center justify-center
+                          rounded-xl
+                          bg-blue-100
+                          px-3 py-2
+                          text-xs font-black text-blue-700
+                        "
+                      >
+                        02
+                      </div>
+
+                      <p className="mt-5 text-sm font-semibold text-slate-500">
+                        Validation
+                      </p>
+
+                      <h4 className="mt-2 text-2xl font-black text-slate-900">
+                        SOUMIS
+                      </h4>
+                    </div>
                   </div>
 
-                  <div>
-                    <p className="text-sm font-medium text-slate-500">
-                      Contrôle
-                    </p>
+                  {/* ITEM */}
+                  <div
+                    className="
+                      relative overflow-hidden
+                      rounded-3xl
+                      border border-violet-200
+                      bg-violet-50
+                      p-6
+                      shadow-sm
+                    "
+                  >
 
-                    <h4 className="mt-3 text-2xl font-black text-slate-900">
-                      VALIDÉ
-                    </h4>
+                    <div
+                      className="
+                        absolute right-0 top-0
+                        h-24 w-24
+                        rounded-full
+                        bg-violet-200/40
+                        blur-2xl
+                      "
+                    />
+
+                    <div className="relative z-10">
+
+                      <div
+                        className="
+                          inline-flex items-center justify-center
+                          rounded-xl
+                          bg-violet-100
+                          px-3 py-2
+                          text-xs font-black text-violet-700
+                        "
+                      >
+                        03
+                      </div>
+
+                      <p className="mt-5 text-sm font-semibold text-slate-500">
+                        Contrôle
+                      </p>
+
+                      <h4 className="mt-2 text-2xl font-black text-slate-900">
+                        VALIDÉ
+                      </h4>
+                    </div>
                   </div>
 
-                  <div>
-                    <p className="text-sm font-medium text-slate-500">
-                      Finance
-                    </p>
+                  {/* ITEM */}
+                  <div
+                    className="
+                      relative overflow-hidden
+                      rounded-3xl
+                      border border-emerald-200
+                      bg-gradient-to-br
+                      from-emerald-50
+                      to-white
+                      p-6
+                      shadow-lg shadow-emerald-100/50
+                    "
+                  >
 
-                    <h4 className="mt-3 text-2xl font-black text-[#F97316]">
-                      TRANSFÉRÉ
-                    </h4>
+                    <div
+                      className="
+                        absolute right-0 top-0
+                        h-24 w-24
+                        rounded-full
+                        bg-emerald-300/30
+                        blur-2xl
+                      "
+                    />
+
+                    <div className="relative z-10">
+
+                      <div
+                        className="
+                          inline-flex items-center justify-center
+                          rounded-xl
+                          bg-emerald-100
+                          px-3 py-2
+                          text-xs font-black text-emerald-700
+                        "
+                      >
+                        04
+                      </div>
+
+                      <p className="mt-5 text-sm font-semibold text-slate-500">
+                        Finance
+                      </p>
+
+                      <h4 className="mt-2 text-2xl font-black text-emerald-700">
+                        TRANSFÉRÉ
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1536,268 +1749,437 @@ export default function Home() {
             {/* CONTENT */}
             <div className="grid gap-8 p-8 xl:grid-cols-[1.3fr_0.7fr]">
 
-              {/* LEFT */}
-              <div>
+  {/* LEFT */}
+  <div>
 
-                {/* KPI GRID */}
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+    {/* KPI GRID */}
+    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 
-                  {[
-                    {
-                      title: "Volume réseau",
-                      value: "2.4M L",
-                      growth: "+18%",
-                    },
-                    {
-                      title: "CA consolidé",
-                      value: "847M",
-                      growth: "+12%",
-                    },
-                    {
-                      title: "Stations actives",
-                      value: "128",
-                      growth: "+6%",
-                    },
-                    {
-                      title: "Health score",
-                      value: "94%",
-                      growth: "Excellent",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      className="
-                        rounded-3xl
-                        border border-slate-200
-                        bg-slate-100
-                        p-6
-                      "
-                    >
-                      <p className="text-sm font-medium text-slate-500">
-                        {item.title}
-                      </p>
+      {[
+        {
+          title: "Volume réseau",
+          value: "2.4M L",
+          growth: "+18%",
+        },
+        {
+          title: "CA consolidé",
+          value: "847M",
+          growth: "+12%",
+        },
+        {
+          title: "Stations actives",
+          value: "128",
+          growth: "+6%",
+        },
+        {
+          title: "Health score",
+          value: "94%",
+          growth: "Excellent",
+        },
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="
+            group relative overflow-hidden
+            rounded-3xl
+            border border-slate-200
+            bg-white
+            p-6
+            shadow-sm
+            transition-all duration-300
+            hover:-translate-y-1
+            hover:shadow-xl
+          "
+        >
 
-                      <h4 className="mt-4 text-3xl font-black text-slate-900">
-                        {item.value}
-                      </h4>
+          {/* GLOW */}
+          <div
+            className="
+              absolute -right-10 -top-10
+              h-28 w-28
+              rounded-full
+              bg-orange-100/60
+              blur-3xl
+              transition-all duration-300
+              group-hover:scale-125
+            "
+          />
 
-                      <p className="mt-3 text-sm font-semibold text-orange-600">
-                        {item.growth}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+          <div className="relative z-10">
 
-                {/* GRAPH */}
-                <div
-                  className="
-                    mt-8
-                    rounded-[32px]
-                    border border-slate-200
-                    bg-white
-                    p-8
-                  "
-                >
+            <p className="text-sm font-semibold text-slate-500">
+              {item.title}
+            </p>
 
-                  <div className="flex items-center justify-between">
+            <h4
+              className="
+                mt-4
+                text-3xl
+                font-black
+                tracking-tight
+                text-slate-900
+              "
+            >
+              {item.value}
+            </h4>
 
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500">
-                        Évolution carburant
-                      </p>
-
-                      <h4 className="mt-2 text-2xl font-black text-slate-900">
-                        Performance réseau
-                      </h4>
-                    </div>
-
-                    <div
-                      className="
-                        rounded-xl
-                        bg-green-100
-                        px-4 py-2
-                        text-sm font-bold text-green-700
-                      "
-                    >
-                      +14.8%
-                    </div>
-                  </div>
-
-                  {/* CHART */}
-                  <div className="mt-10 flex h-72 items-end gap-4">
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-24 w-full rounded-t-3xl bg-[#F97316]" />
-                      <span className="text-xs text-slate-500">Jan</span>
-                    </div>
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-32 w-full rounded-t-3xl bg-[#FB923C]" />
-                      <span className="text-xs text-slate-500">Fév</span>
-                    </div>
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-40 w-full rounded-t-3xl bg-[#FDBA74]" />
-                      <span className="text-xs text-slate-500">Mar</span>
-                    </div>
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-48 w-full rounded-t-3xl bg-[#93C5FD]" />
-                      <span className="text-xs text-slate-500">Avr</span>
-                    </div>
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-56 w-full rounded-t-3xl bg-[#60A5FA]" />
-                      <span className="text-xs text-slate-500">Mai</span>
-                    </div>
-
-                    <div className="flex w-full flex-col items-center gap-3">
-                      <div className="h-64 w-full rounded-t-3xl bg-[#2563EB]" />
-                      <span className="text-xs text-slate-500">Juin</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="space-y-8">
-
-                {/* STOCK CARD */}
-                <div
-                  className="
-                    rounded-[32px]
-                    border border-slate-200
-                    bg-white
-                    p-8
-                  "
-                >
-
-                  <div className="flex items-center justify-between">
-
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500">
-                        Stock exploitable
-                      </p>
-
-                      <h4 className="mt-2 text-3xl font-black text-slate-900">
-                        94%
-                      </h4>
-                    </div>
-
-                    <div
-                      className="
-                        rounded-2xl
-                        bg-orange-100
-                        px-4 py-2
-                        text-sm font-bold text-orange-700
-                      "
-                    >
-                      Stable
-                    </div>
-                  </div>
-
-                  {/* PROGRESS */}
-                  <div className="mt-8">
-
-                    <div className="h-4 rounded-full bg-slate-100">
-                      <div
-                        className="
-                          h-4
-                          w-[94%]
-                          rounded-full
-                          bg-gradient-to-r
-                          from-orange-500
-                          to-orange-400
-                        "
-                      />
-                    </div>
-
-                    <div className="mt-4 flex justify-between text-sm text-slate-500">
-                      <span>0%</span>
-                      <span>100%</span>
-                    </div>
-                  </div>
-
-                  {/* INFO */}
-                  <div className="mt-8 grid grid-cols-2 gap-5">
-
-                    <div className="rounded-2xl bg-slate-100 p-5">
-                      <p className="text-sm text-slate-500">
-                        Cuves actives
-                      </p>
-
-                      <h5 className="mt-2 text-xl font-black text-slate-900">
-                        42
-                      </h5>
-                    </div>
-
-                    <div className="rounded-2xl bg-slate-100 p-5">
-                      <p className="text-sm text-slate-500">
-                        Autonomie
-                      </p>
-
-                      <h5 className="mt-2 text-xl font-black text-slate-900">
-                        18 jours
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ACTIVITY */}
-                <div
-                  className="
-                    rounded-[32px]
-                    border border-slate-200
-                    bg-white
-                    p-8
-                  "
-                >
-
-                  <div className="flex items-center justify-between">
-
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500">
-                        Activité réseau
-                      </p>
-
-                      <h4 className="mt-2 text-2xl font-black text-slate-900">
-                        Temps réel
-                      </h4>
-                    </div>
-
-                    <div className="h-3 w-3 rounded-full bg-green-500" />
-                  </div>
-
-                  {/* EVENTS */}
-                  <div className="mt-8 space-y-5">
-
-                    {[
-                      "Relais validé • Station Dakar Centre",
-                      "Dépôtage terminé • Cuve Gasoil",
-                      "Versement confirmé • Station Thiès",
-                      "Nouvelle alerte stock • Saint-Louis",
-                    ].map((event) => (
-                      <div
-                        key={event}
-                        className="
-                          flex items-center gap-4
-                          rounded-2xl
-                          border border-slate-100
-                          bg-slate-100
-                          p-4
-                        "
-                      >
-                        <div className="h-3 w-3 rounded-full bg-orange-500" />
-
-                        <p className="text-sm font-medium text-slate-700">
-                          {event}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div
+              className="
+                mt-4 inline-flex items-center
+                rounded-xl
+                bg-emerald-50
+                px-3 py-2
+                text-sm font-black text-emerald-700
+              "
+            >
+              {item.growth}
             </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* GRAPH */}
+    <div
+      className="
+        relative overflow-hidden
+        mt-8
+        rounded-[32px]
+        border border-slate-200
+        bg-gradient-to-br
+        from-white
+        via-slate-50
+        to-orange-50
+        p-8
+        shadow-sm
+      "
+    >
+
+      {/* GLOW */}
+      <div
+        className="
+          absolute -right-20 -top-20
+          h-72 w-72
+          rounded-full
+          bg-orange-200/20
+          blur-3xl
+        "
+      />
+
+      <div className="relative z-10">
+
+        <div className="flex items-center justify-between">
+
+          <div>
+            <p className="text-sm font-semibold text-slate-500">
+              Évolution carburant
+            </p>
+
+            <h4 className="mt-2 text-2xl font-black text-slate-900">
+              Performance réseau
+            </h4>
+          </div>
+
+          <div
+            className="
+              rounded-xl
+              bg-green-100
+              px-4 py-2
+              text-sm font-bold text-green-700
+            "
+          >
+            +14.8%
+          </div>
+        </div>
+
+        {/* CHART */}
+        <div className="mt-10 flex h-72 items-end gap-4">
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-24 w-full
+                rounded-t-3xl
+                bg-[#F97316]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Jan
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-32 w-full
+                rounded-t-3xl
+                bg-[#FB923C]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Fév
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-40 w-full
+                rounded-t-3xl
+                bg-[#FDBA74]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Mar
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-48 w-full
+                rounded-t-3xl
+                bg-[#93C5FD]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Avr
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-56 w-full
+                rounded-t-3xl
+                bg-[#60A5FA]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Mai
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-3">
+            <div
+              className="
+                h-64 w-full
+                rounded-t-3xl
+                bg-[#2563EB]
+                transition-all duration-300
+                hover:opacity-80
+              "
+            />
+            <span className="text-xs text-slate-500">
+              Juin
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* RIGHT */}
+  <div className="space-y-8">
+
+    {/* STOCK CARD */}
+    <div
+      className="
+        relative overflow-hidden
+        rounded-[32px]
+        border border-slate-200
+        bg-gradient-to-br
+        from-white
+        to-orange-50
+        p-8
+        shadow-sm
+      "
+    >
+
+      {/* GLOW */}
+      <div
+        className="
+          absolute -right-20 -top-20
+          h-64 w-64
+          rounded-full
+          bg-orange-200/20
+          blur-3xl
+        "
+      />
+
+      <div className="relative z-10">
+
+        <div className="flex items-center justify-between">
+
+          <div>
+            <p className="text-sm font-semibold text-slate-500">
+              Stock exploitable
+            </p>
+
+            <h4 className="mt-2 text-3xl font-black text-slate-900">
+              94%
+            </h4>
+          </div>
+
+          <div
+            className="
+              rounded-2xl
+              bg-orange-100
+              px-4 py-2
+              text-sm font-bold text-orange-700
+            "
+          >
+            Stable
+          </div>
+        </div>
+
+        {/* PROGRESS */}
+        <div className="mt-8">
+
+          <div className="h-4 rounded-full bg-slate-100">
+            <div
+              className="
+                h-4
+                w-[94%]
+                rounded-full
+                bg-gradient-to-r
+                from-orange-500
+                to-orange-400
+              "
+            />
+          </div>
+
+          <div className="mt-4 flex justify-between text-sm text-slate-500">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+        </div>
+
+        {/* INFO */}
+        <div className="mt-8 grid grid-cols-2 gap-5">
+
+          <div
+            className="
+              rounded-2xl
+              border border-orange-100
+              bg-white
+              p-5
+            "
+          >
+            <p className="text-sm text-slate-500">
+              Cuves actives
+            </p>
+
+            <h5 className="mt-2 text-xl font-black text-slate-900">
+              42
+            </h5>
+          </div>
+
+          <div
+            className="
+              rounded-2xl
+              border border-orange-100
+              bg-white
+              p-5
+            "
+          >
+            <p className="text-sm text-slate-500">
+              Autonomie
+            </p>
+
+            <h5 className="mt-2 text-xl font-black text-slate-900">
+              18 jours
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* ACTIVITY */}
+    <div
+      className="
+        rounded-[32px]
+        border border-slate-200
+        bg-white
+        p-8
+        shadow-sm
+      "
+    >
+
+      <div className="flex items-center justify-between">
+
+        <div>
+          <p className="text-sm font-semibold text-slate-500">
+            Activité réseau
+          </p>
+
+          <h4 className="mt-2 text-2xl font-black text-slate-900">
+            Temps réel
+          </h4>
+        </div>
+
+        <div
+          className="
+            h-3 w-3
+            rounded-full
+            bg-green-500
+            animate-pulse
+          "
+        />
+      </div>
+
+      {/* EVENTS */}
+      <div className="mt-8 space-y-5">
+
+        {[
+          "Relais validé • Station Dakar Centre",
+          "Dépôtage terminé • Cuve Gasoil",
+          "Versement confirmé • Station Thiès",
+          "Nouvelle alerte stock • Saint-Louis",
+        ].map((event) => (
+          <div
+            key={event}
+            className="
+              flex items-center gap-4
+              rounded-2xl
+              border border-slate-100
+              bg-white
+              p-4
+              shadow-sm
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:shadow-md
+            "
+          >
+
+            <div
+              className="
+                h-3 w-3
+                rounded-full
+                bg-orange-500
+                animate-pulse
+              "
+            />
+
+            <p className="text-sm font-medium text-slate-700">
+              {event}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </section>
@@ -2461,283 +2843,345 @@ export default function Home() {
 
             <div className="grid items-center gap-16 p-10 lg:grid-cols-[1fr_0.9fr] lg:p-16">
 
-              {/* LEFT */}
-              <div>
+  {/* LEFT */}
+  <div>
 
-                <div
-                  className="
-                    inline-flex items-center gap-3
-                    rounded-full
-                    border border-orange-100
-                    bg-orange-50
-                    px-5 py-2
-                    text-sm font-semibold text-orange-700
-                  "
-                >
-                  <div className="h-2 w-2 rounded-full bg-orange-500" />
+    <div
+      className="
+        inline-flex items-center gap-3
+        rounded-full
+        border border-orange-100
+        bg-orange-50
+        px-5 py-2
+        text-sm font-semibold text-orange-700
+        shadow-sm
+      "
+    >
+      <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
 
-                  Déploiement SaaS enterprise
-                </div>
+      Déploiement SaaS enterprise
+    </div>
 
-                <h2
-                  className="
-                    mt-8
-                    text-4xl md:text-5xl lg:text-6xl
-                    font-black
-                    leading-tight
-                    tracking-[-0.05em]
-                    text-slate-900
-                    md:text-7xl
-                  "
-                >
-                  Pilotez votre
-                  <span className="block text-[#F97316]">
-                    réseau de stations
-                  </span>
-                  avec FuelControl
-                </h2>
+    <h2
+      className="
+        mt-8
+        text-4xl md:text-5xl lg:text-6xl
+        font-black
+        leading-tight
+        tracking-[-0.05em]
+        text-slate-900
+        md:text-7xl
+      "
+    >
+      Pilotez votre
+      <span className="block text-[#F97316]">
+        réseau de stations
+      </span>
+      avec FuelControl
+    </h2>
 
-                <p
-                  className="
-                    mt-8
-                    max-w-2xl
-                    text-xl
-                    leading-relaxed
-                    text-slate-600
-                  "
-                >
-                  Centralisez vos opérations,
-                  vos finances,
-                  vos dashboards,
-                  vos workflows terrain
-                  et votre supervision réseau
-                  dans une seule plateforme SaaS.
+    <p
+      className="
+        mt-8
+        max-w-2xl
+        text-xl
+        leading-relaxed
+        text-slate-600
+      "
+    >
+      Centralisez vos opérations,
+      vos finances,
+      vos dashboards,
+      vos workflows terrain
+      et votre supervision réseau
+      dans une seule plateforme SaaS.
+    </p>
+
+    {/* BUTTONS */}
+    <div className="mt-12 flex flex-wrap gap-5">
+
+      <a
+        href="#contact"
+        className="
+          inline-flex items-center gap-3
+          rounded-2xl
+          bg-[#F97316]
+          px-8 py-5
+          text-lg font-bold text-white
+          shadow-xl shadow-orange-500/20
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:bg-[#EA580C]
+          hover:shadow-2xl hover:shadow-orange-500/30
+        "
+      >
+        Demander une démo
+
+        <span>→</span>
+      </a>
+
+      <a
+        href="/login"
+        className="
+          inline-flex items-center gap-3
+          rounded-2xl
+          border border-slate-200
+          bg-white
+          px-8 py-5
+          text-lg font-semibold text-slate-700
+          shadow-sm
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:border-slate-300
+          hover:bg-slate-50
+          hover:shadow-lg
+        "
+      >
+        Accès plateforme
+      </a>
+    </div>
+
+    {/* STATS */}
+    <div className="mt-14 flex flex-wrap gap-10">
+
+      <div>
+        <h3 className="text-4xl font-black tracking-tight text-slate-900">
+          Multi
+        </h3>
+
+        <p className="mt-2 text-sm font-medium text-slate-500">
+          Stations
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-black tracking-tight text-slate-900">
+          Temps réel
+        </h3>
+
+        <p className="mt-2 text-sm font-medium text-slate-500">
+          Analytics & supervision
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-black tracking-tight text-slate-900">
+          Audit-ready
+        </h3>
+
+        <p className="mt-2 text-sm font-medium text-slate-500">
+          Traçabilité complète
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* RIGHT */}
+  <div className="space-y-6">
+
+    {/* MAIN CARD */}
+    <div
+      className="
+        relative overflow-hidden
+        rounded-[36px]
+        border border-slate-200
+        bg-gradient-to-br
+        from-white
+        via-slate-50
+        to-orange-50
+        p-8
+        shadow-xl shadow-slate-200/40
+      "
+    >
+
+      {/* GLOW */}
+      <div
+        className="
+          absolute -right-24 -top-24
+          h-72 w-72
+          rounded-full
+          bg-orange-200/20
+          blur-3xl
+        "
+      />
+
+      <div className="relative z-10">
+
+        <div className="flex items-center justify-between">
+
+          <div>
+            <p className="text-sm font-semibold text-slate-500">
+              FuelControl Enterprise
+            </p>
+
+            <h3 className="mt-2 text-3xl font-black text-slate-900">
+              Supervision Réseau
+            </h3>
+          </div>
+
+          <div
+            className="
+              rounded-2xl
+              bg-orange-100
+              px-4 py-2
+              text-sm font-bold text-orange-700
+              shadow-sm
+            "
+          >
+            Live
+          </div>
+        </div>
+
+        {/* GRID */}
+        <div className="mt-10 grid grid-cols-2 gap-5">
+
+          {[
+            {
+              label: "Stations",
+              value: "128",
+            },
+            {
+              label: "Volume réseau",
+              value: "2.4M L",
+            },
+            {
+              label: "Disponibilité",
+              value: "99.9%",
+            },
+            {
+              label: "Health score",
+              value: "Excellent",
+            },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="
+                group relative overflow-hidden
+                rounded-2xl
+                border border-white/50
+                bg-white/80
+                p-5
+                backdrop-blur-sm
+                transition-all duration-300
+                hover:-translate-y-1
+                hover:shadow-lg
+              "
+            >
+
+              <div
+                className="
+                  absolute -right-10 -top-10
+                  h-20 w-20
+                  rounded-full
+                  bg-orange-100/40
+                  blur-2xl
+                  transition-all duration-300
+                  group-hover:scale-125
+                "
+              />
+
+              <div className="relative z-10">
+
+                <p className="text-sm text-slate-500">
+                  {item.label}
                 </p>
 
-                {/* BUTTONS */}
-                <div className="mt-12 flex flex-wrap gap-5">
-
-                  <a
-                    href="#"
-                    className="
-                      inline-flex items-center gap-3
-                      rounded-2xl
-                      bg-[#F97316]
-                      px-8 py-5
-                      text-lg font-bold text-white
-                      shadow-xl shadow-orange-500/20
-                      transition-all
-                      hover:-translate-y-1
-                      hover:bg-[#EA580C]
-                    "
-                  >
-                    Demander une démo
-
-                    <span>→</span>
-                  </a>
-
-                  <a
-                    href="/login"
-                    className="
-                      inline-flex items-center gap-3
-                      rounded-2xl
-                      border border-slate-200
-                      bg-white
-                      px-8 py-5
-                      text-lg font-semibold text-slate-700
-                      transition-all
-                      hover:border-slate-300
-                      hover:bg-slate-100
-                    "
-                  >
-                    Accès plateforme
-                  </a>
-                </div>
-
-                {/* STATS */}
-                <div className="mt-14 flex flex-wrap gap-10">
-
-                  <div>
-                    <h3 className="text-4xl font-black text-slate-900">
-                      Multi
-                    </h3>
-
-                    <p className="mt-2 text-sm font-medium text-slate-500">
-                      Stations
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-4xl font-black text-slate-900">
-                      Temps réel
-                    </h3>
-
-                    <p className="mt-2 text-sm font-medium text-slate-500">
-                      Analytics & supervision
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-4xl font-black text-slate-900">
-                      Audit-ready
-                    </h3>
-
-                    <p className="mt-2 text-sm font-medium text-slate-500">
-                      Traçabilité complète
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="space-y-6">
-
-                {/* CARD */}
-                <div
+                <h4
                   className="
-                    rounded-[36px]
-                    border border-slate-200
-                    bg-slate-100
-                    p-8
+                    mt-2
+                    text-3xl
+                    font-black
+                    tracking-tight
+                    text-slate-900
                   "
                 >
-
-                  <div className="flex items-center justify-between">
-
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500">
-                        FuelControl Enterprise
-                      </p>
-
-                      <h3 className="mt-2 text-3xl font-black text-slate-900">
-                        Supervision Réseau
-                      </h3>
-                    </div>
-
-                    <div
-                      className="
-                        rounded-2xl
-                        bg-orange-100
-                        px-4 py-2
-                        text-sm font-bold text-orange-700
-                      "
-                    >
-                      Live
-                    </div>
-                  </div>
-
-                  {/* GRID */}
-                  <div className="mt-10 grid grid-cols-2 gap-5">
-
-                    <div className="rounded-2xl bg-white p-5">
-                      <p className="text-sm text-slate-500">
-                        Stations
-                      </p>
-
-                      <h4 className="mt-2 text-3xl font-black text-slate-900">
-                        128
-                      </h4>
-                    </div>
-
-                    <div className="rounded-2xl bg-white p-5">
-                      <p className="text-sm text-slate-500">
-                        Volume réseau
-                      </p>
-
-                      <h4 className="mt-2 text-3xl font-black text-slate-900">
-                        2.4M L
-                      </h4>
-                    </div>
-
-                    <div className="rounded-2xl bg-white p-5">
-                      <p className="text-sm text-slate-500">
-                        Disponibilité
-                      </p>
-
-                      <h4 className="mt-2 text-3xl font-black text-slate-900">
-                        99.9%
-                      </h4>
-                    </div>
-
-                    <div className="rounded-2xl bg-white p-5">
-                      <p className="text-sm text-slate-500">
-                        Health score
-                      </p>
-
-                      <h4 className="mt-2 text-3xl font-black text-slate-900">
-                        Excellent
-                      </h4>
-                    </div>
-                  </div>
-
-                  {/* STATUS */}
-                  <div
-                    className="
-                      mt-8
-                      flex items-center justify-between
-                      rounded-3xl
-                      border border-slate-200
-                      bg-white
-                      p-6
-                    "
-                  >
-
-                    <div>
-                      <p className="text-sm text-slate-500">
-                        Synchronisation réseau
-                      </p>
-
-                      <h4 className="mt-2 text-xl font-black text-slate-900">
-                        Temps réel
-                      </h4>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-
-                      <div className="h-3 w-3 rounded-full bg-green-500" />
-
-                      <span className="text-sm font-semibold text-green-700">
-                        Opérationnel
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* FLOATING */}
-                <div
-                  className="
-                    flex items-center justify-between
-                    rounded-3xl
-                    border border-slate-200
-                    bg-white
-                    p-6
-                    shadow-sm
-                  "
-                >
-
-                  <div>
-                    <p className="text-sm text-slate-500">
-                      Architecture
-                    </p>
-
-                    <h4 className="mt-2 text-2xl font-black text-slate-900">
-                      Multi-tenant
-                    </h4>
-                  </div>
-
-                  <div
-                    className="
-                      rounded-2xl
-                      bg-blue-100
-                      px-5 py-3
-                      text-sm font-bold text-blue-700
-                    "
-                  >
-                    Enterprise Ready
-                  </div>
-                </div>
+                  {item.value}
+                </h4>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* STATUS */}
+        <div
+          className="
+            mt-8
+            flex items-center justify-between
+            rounded-3xl
+            border border-white/60
+            bg-white/80
+            p-6
+            backdrop-blur-sm
+          "
+        >
+
+          <div>
+            <p className="text-sm text-slate-500">
+              Synchronisation réseau
+            </p>
+
+            <h4 className="mt-2 text-xl font-black text-slate-900">
+              Temps réel
+            </h4>
+          </div>
+
+          <div className="flex items-center gap-3">
+
+            <div
+              className="
+                h-3 w-3
+                rounded-full
+                bg-green-500
+                animate-pulse
+              "
+            />
+
+            <span className="text-sm font-semibold text-green-700">
+              Opérationnel
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* FLOATING */}
+    <div
+      className="
+        flex items-center justify-between
+        rounded-3xl
+        border border-slate-200
+        bg-white
+        p-6
+        shadow-sm
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:shadow-xl
+      "
+    >
+
+      <div>
+        <p className="text-sm text-slate-500">
+          Architecture
+        </p>
+
+        <h4 className="mt-2 text-2xl font-black text-slate-900">
+          Multi-tenant
+        </h4>
+      </div>
+
+      <div
+        className="
+          rounded-2xl
+          bg-blue-100
+          px-5 py-3
+          text-sm font-bold text-blue-700
+        "
+      >
+        Enterprise Ready
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </section>
