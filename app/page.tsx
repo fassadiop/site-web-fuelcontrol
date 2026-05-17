@@ -634,9 +634,10 @@ export default function Home() {
                 bg-blue-50
                 px-5 py-2
                 text-sm font-semibold text-blue-700
+                shadow-sm
               "
             >
-              <div className="h-2 w-2 rounded-full bg-blue-500" />
+              <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
 
               Architecture modulaire enterprise
             </div>
@@ -681,279 +682,403 @@ export default function Home() {
           {/* MODULE GRID */}
           <div className="mt-20 grid gap-8 lg:grid-cols-3">
 
-            {/* CARD 1 */}
-            <div className="premium-card p-8">
+            {[
+              {
+                icon: "⛽",
+                color: "orange",
+                title: "Gestion Carburant",
+                description:
+                  "Gestion complète des ventes carburant, des pompes, des index, des cuves, des volumes et des mouvements stock.",
+                items: [
+                  "Gestion pompes & îlots",
+                  "Stock exploitable temps réel",
+                  "Gestion cuves industrielles",
+                ],
+              },
 
+              {
+                icon: "📊",
+                color: "blue",
+                title: "Dashboards & Analytics",
+                description:
+                  "Supervision réseau, KPI temps réel, volumes carburant, marges, autonomie stock et performance multi-stations.",
+                items: [
+                  "KPI réseau consolidés",
+                  "Health score stations",
+                  "Reporting temps réel",
+                ],
+              },
+
+              {
+                icon: "🏦",
+                color: "slate",
+                title: "Finances & Audit",
+                description:
+                  "Consolidation automatique, rapprochements caisse, workflows validés, traçabilité complète et architecture audit-ready.",
+                items: [
+                  "Flux STATION → FINANCES",
+                  "Validation & verrouillage",
+                  "Journalisation complète",
+                ],
+              },
+            ].map((card) => (
               <div
+                key={card.title}
                 className="
-                  flex h-16 w-16 items-center justify-center
-                  rounded-2xl
-                  bg-orange-100
-                  text-3xl
+                  group relative overflow-hidden
+                  rounded-[32px]
+                  border border-slate-200
+                  bg-white
+                  p-8
+                  shadow-sm
+                  transition-all duration-300
+                  hover:-translate-y-2
+                  hover:shadow-2xl
                 "
               >
-                ⛽
+
+                {/* GLOW */}
+                <div
+                  className={`
+                    absolute -right-16 -top-16
+                    h-48 w-48
+                    rounded-full
+                    blur-3xl
+                    opacity-60
+                    transition-all duration-300
+                    group-hover:scale-125
+
+                    ${
+                      card.color === "orange"
+                        ? "bg-orange-200/40"
+                        : card.color === "blue"
+                        ? "bg-blue-200/40"
+                        : "bg-slate-300/30"
+                    }
+                  `}
+                />
+
+                <div className="relative z-10">
+
+                  <div
+                    className={`
+                      flex h-16 w-16 items-center justify-center
+                      rounded-2xl
+                      text-3xl
+                      shadow-sm
+
+                      ${
+                        card.color === "orange"
+                          ? "bg-orange-100"
+                          : card.color === "blue"
+                          ? "bg-blue-100"
+                          : "bg-slate-100"
+                      }
+                    `}
+                  >
+                    {card.icon}
+                  </div>
+
+                  <h3 className="mt-8 text-2xl font-black text-slate-900">
+                    {card.title}
+                  </h3>
+
+                  <p className="mt-5 leading-relaxed text-slate-600">
+                    {card.description}
+                  </p>
+
+                  <ul className="mt-8 space-y-4">
+
+                    {card.items.map((item) => (
+                      <li
+                        key={item}
+                        className="
+                          flex items-center gap-3
+                          text-sm font-medium text-slate-700
+                        "
+                      >
+
+                        <div
+                          className={`
+                            h-2 w-2 rounded-full
+
+                            ${
+                              card.color === "orange"
+                                ? "bg-orange-500"
+                                : card.color === "blue"
+                                ? "bg-blue-500"
+                                : "bg-slate-700"
+                            }
+                          `}
+                        />
+
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-
-              <h3 className="mt-8 text-2xl font-black text-slate-900">
-                Gestion Carburant
-              </h3>
-
-              <p className="mt-5 text-slate-600 leading-relaxed">
-                Gestion complète des ventes carburant,
-                des pompes,
-                des index,
-                des cuves,
-                des volumes
-                et des mouvements stock.
-              </p>
-
-              <ul className="mt-8 space-y-4">
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-orange-500" />
-                  Gestion pompes & îlots
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-orange-500" />
-                  Stock exploitable temps réel
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-orange-500" />
-                  Gestion cuves industrielles
-                </li>
-              </ul>
-            </div>
-
-            {/* CARD 2 */}
-            <div className="premium-card p-8">
-
-              <div
-                className="
-                  flex h-16 w-16 items-center justify-center
-                  rounded-2xl
-                  bg-blue-100
-                  text-3xl
-                "
-              >
-                📊
-              </div>
-
-              <h3 className="mt-8 text-2xl font-black text-slate-900">
-                Dashboards & Analytics
-              </h3>
-
-              <p className="mt-5 text-slate-600 leading-relaxed">
-                Supervision réseau,
-                KPI temps réel,
-                volumes carburant,
-                marges,
-                autonomie stock
-                et performance multi-stations.
-              </p>
-
-              <ul className="mt-8 space-y-4">
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-blue-500" />
-                  KPI réseau consolidés
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-blue-500" />
-                  Health score stations
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-blue-500" />
-                  Reporting temps réel
-                </li>
-              </ul>
-            </div>
-
-            {/* CARD 3 */}
-            <div className="premium-card p-8">
-
-              <div
-                className="
-                  flex h-16 w-16 items-center justify-center
-                  rounded-2xl
-                  bg-slate-100
-                  text-3xl
-                "
-              >
-                🏦
-              </div>
-
-              <h3 className="mt-8 text-2xl font-black text-slate-900">
-                Finances & Audit
-              </h3>
-
-              <p className="mt-5 text-slate-600 leading-relaxed">
-                Consolidation automatique,
-                rapprochements caisse,
-                workflows validés,
-                traçabilité complète
-                et architecture audit-ready.
-              </p>
-
-              <ul className="mt-8 space-y-4">
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-slate-700" />
-                  Flux STATION → FINANCES
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-slate-700" />
-                  Validation & verrouillage
-                </li>
-
-                <li className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <div className="h-2 w-2 rounded-full bg-slate-700" />
-                  Journalisation complète
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
 
           {/* BOTTOM GRID */}
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
 
             {/* LEFT */}
-            <div className="premium-card overflow-hidden p-10">
+            <div
+              className="
+                relative overflow-hidden
+                rounded-[36px]
+                border border-slate-200
+                bg-gradient-to-br
+                from-white
+                via-orange-50/30
+                to-orange-100/30
+                p-10
+                shadow-sm
+              "
+            >
 
-              <div className="flex items-start justify-between gap-10">
+              {/* GLOW */}
+              <div
+                className="
+                  absolute -right-24 -top-24
+                  h-72 w-72
+                  rounded-full
+                  bg-orange-200/20
+                  blur-3xl
+                "
+              />
 
-                <div>
-                  <div
-                    className="
-                      flex h-16 w-16 items-center justify-center
-                      rounded-2xl
-                      bg-orange-100
-                      text-3xl
-                    "
-                  >
-                    🚛
+              <div className="relative z-10">
+
+                <div className="flex items-start justify-between gap-10">
+
+                  <div>
+                    <div
+                      className="
+                        flex h-16 w-16 items-center justify-center
+                        rounded-2xl
+                        bg-orange-100
+                        text-3xl
+                        shadow-sm
+                      "
+                    >
+                      🚛
+                    </div>
+
+                    <h3 className="mt-8 text-3xl font-black text-slate-900">
+                      Dépôtage industriel
+                    </h3>
+
+                    <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
+                      Gestion avancée des approvisionnements,
+                      contrôles physiques,
+                      variations cuves,
+                      transporteurs,
+                      écarts dépôtage
+                      et application stock automatique.
+                    </p>
                   </div>
 
-                  <h3 className="mt-8 text-3xl font-black text-slate-900">
-                    Dépôtage industriel
-                  </h3>
-
-                  <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-                    Gestion avancée des approvisionnements,
-                    contrôles physiques,
-                    variations cuves,
-                    transporteurs,
-                    écarts dépôtage
-                    et application stock automatique.
-                  </p>
+                  <div
+                    className="
+                      hidden
+                      rounded-2xl
+                      bg-orange-100
+                      px-5 py-3
+                      text-sm font-bold text-orange-700
+                      shadow-sm
+                      lg:block
+                    "
+                  >
+                    Processus industriel
+                  </div>
                 </div>
 
-                <div
-                  className="
-                    hidden
-                    rounded-2xl
-                    bg-orange-50
-                    px-5 py-3
-                    text-sm font-bold text-orange-700
-                    lg:block
-                  "
-                >
-                  Processus industriel
-                </div>
-              </div>
+                {/* MINI STATS */}
+                <div className="mt-10 grid grid-cols-3 gap-5">
 
-              {/* MINI STATS */}
-              <div className="mt-10 grid grid-cols-3 gap-5">
+                  {[
+                    {
+                      title: "Contrôle",
+                      value: "Jauge",
+                    },
+                    {
+                      title: "Gestion",
+                      value: "Camions",
+                    },
+                    {
+                      title: "Validation",
+                      value: "Temps réel",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      className="
+                        rounded-2xl
+                        border border-orange-100
+                        bg-white/80
+                        p-5
+                        backdrop-blur-sm
+                      "
+                    >
 
-                <div className="rounded-2xl bg-slate-100 p-5">
-                  <p className="text-sm text-slate-500">
-                    Contrôle
-                  </p>
+                      <p className="text-sm text-slate-500">
+                        {item.title}
+                      </p>
 
-                  <h4 className="mt-2 text-xl font-black text-slate-900">
-                    Jauge
-                  </h4>
-                </div>
-
-                <div className="rounded-2xl bg-slate-100 p-5">
-                  <p className="text-sm text-slate-500">
-                    Gestion
-                  </p>
-
-                  <h4 className="mt-2 text-xl font-black text-slate-900">
-                    Camions
-                  </h4>
-                </div>
-
-                <div className="rounded-2xl bg-slate-100 p-5">
-                  <p className="text-sm text-slate-500">
-                    Validation
-                  </p>
-
-                  <h4 className="mt-2 text-xl font-black text-slate-900">
-                    Temps réel
-                  </h4>
+                      <h4 className="mt-2 text-xl font-black text-slate-900">
+                        {item.value}
+                      </h4>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
             {/* RIGHT */}
-            <div className="premium-card overflow-hidden bg-slate-100 p-10">
+            <div
+              className="
+                relative overflow-hidden
+                rounded-[36px]
+                border border-slate-200
+                bg-gradient-to-br
+                from-white
+                via-slate-50
+                to-blue-50
+                p-10
+                shadow-xl shadow-slate-200/40
+              "
+            >
 
+              {/* GLOW */}
               <div
                 className="
-                  inline-flex items-center gap-3
+                  absolute -right-20 -top-20
+                  h-72 w-72
                   rounded-full
-                  bg-white/10
-                  px-5 py-2
-                  text-sm font-semibold text-slate-900
+                  bg-blue-200/20
+                  blur-3xl
                 "
-              >
-                Multi-tenant Enterprise
-              </div>
+              />
 
-              <h3 className="mt-8 text-4xl font-black leading-tight text-slate-900">
-                Gouvernance
-                <span className="block text-[#F97316]">
-                  multi-stations
-                </span>
-              </h3>
+              <div className="relative z-10">
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-                FuelControl intègre une architecture
-                RBAC avancée,
-                une isolation multi-tenant stricte
-                et des workflows sécurisés
-                adaptés aux groupes énergétiques.
-              </p>
+                <div
+                  className="
+                    inline-flex items-center gap-3
+                    rounded-full
+                    border border-blue-100
+                    bg-white/80
+                    px-5 py-2
+                    text-sm font-semibold text-blue-700
+                    backdrop-blur-sm
+                    shadow-sm
+                  "
+                >
+                  Multi-tenant Enterprise
+                </div>
 
-              {/* ROLES */}
-              <div className="mt-10 flex flex-wrap gap-4">
+                <h3
+                  className="
+                    mt-8
+                    text-4xl
+                    font-black
+                    leading-tight
+                    text-slate-900
+                  "
+                >
+                  Gouvernance
+                  <span className="block text-[#2563EB]">
+                    multi-stations
+                  </span>
+                </h3>
 
-                {[
-                  "SUPERADMIN",
-                  "GERANT",
-                  "SUPERVISEUR",
-                  "POMPISTE",
-                ].map((role) => (
-                  <div
-                    key={role}
-                    className="
-                      rounded-xl
-                      border border-white/10
-                      bg-white/5
-                      px-4 py-3
-                      text-sm font-semibold text-slate-900
-                    "
-                  >
-                    {role}
+                <p
+                  className="
+                    mt-6
+                    max-w-xl
+                    text-lg
+                    leading-relaxed
+                    text-slate-600
+                  "
+                >
+                  FuelControl intègre une architecture
+                  RBAC avancée,
+                  une isolation multi-tenant stricte
+                  et des workflows sécurisés
+                  adaptés aux groupes énergétiques.
+                </p>
+
+                {/* ROLES */}
+                <div className="mt-10 flex flex-wrap gap-4">
+
+                  {[
+                    "SUPERADMIN",
+                    "GERANT",
+                    "SUPERVISEUR",
+                    "POMPISTE",
+                  ].map((role) => (
+                    <div
+                      key={role}
+                      className="
+                        rounded-xl
+                        border border-blue-100
+                        bg-white/80
+                        px-4 py-3
+                        text-sm font-semibold text-slate-800
+                        backdrop-blur-sm
+                        shadow-sm
+                        transition-all duration-300
+                        hover:-translate-y-1
+                        hover:shadow-lg
+                      "
+                    >
+                      {role}
+                    </div>
+                  ))}
+                </div>
+
+                {/* BOTTOM STATUS */}
+                <div
+                  className="
+                    mt-10
+                    flex items-center justify-between
+                    rounded-3xl
+                    border border-blue-100
+                    bg-white/70
+                    p-6
+                    backdrop-blur-sm
+                  "
+                >
+
+                  <div>
+                    <p className="text-sm text-slate-500">
+                      Isolation tenant
+                    </p>
+
+                    <h4 className="mt-2 text-xl font-black text-slate-900">
+                      Sécurisée & scalable
+                    </h4>
                   </div>
-                ))}
+
+                  <div className="flex items-center gap-3">
+
+                    <div
+                      className="
+                        h-3 w-3
+                        rounded-full
+                        bg-green-500
+                        animate-pulse
+                      "
+                    />
+
+                    <span className="text-sm font-semibold text-green-700">
+                      Enterprise Ready
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2843,345 +2968,345 @@ export default function Home() {
 
             <div className="grid items-center gap-16 p-10 lg:grid-cols-[1fr_0.9fr] lg:p-16">
 
-  {/* LEFT */}
-  <div>
+              {/* LEFT */}
+              <div>
 
-    <div
-      className="
-        inline-flex items-center gap-3
-        rounded-full
-        border border-orange-100
-        bg-orange-50
-        px-5 py-2
-        text-sm font-semibold text-orange-700
-        shadow-sm
-      "
-    >
-      <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
-
-      Déploiement SaaS enterprise
-    </div>
-
-    <h2
-      className="
-        mt-8
-        text-4xl md:text-5xl lg:text-6xl
-        font-black
-        leading-tight
-        tracking-[-0.05em]
-        text-slate-900
-        md:text-7xl
-      "
-    >
-      Pilotez votre
-      <span className="block text-[#F97316]">
-        réseau de stations
-      </span>
-      avec FuelControl
-    </h2>
-
-    <p
-      className="
-        mt-8
-        max-w-2xl
-        text-xl
-        leading-relaxed
-        text-slate-600
-      "
-    >
-      Centralisez vos opérations,
-      vos finances,
-      vos dashboards,
-      vos workflows terrain
-      et votre supervision réseau
-      dans une seule plateforme SaaS.
-    </p>
-
-    {/* BUTTONS */}
-    <div className="mt-12 flex flex-wrap gap-5">
-
-      <a
-        href="#contact"
-        className="
-          inline-flex items-center gap-3
-          rounded-2xl
-          bg-[#F97316]
-          px-8 py-5
-          text-lg font-bold text-white
-          shadow-xl shadow-orange-500/20
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:bg-[#EA580C]
-          hover:shadow-2xl hover:shadow-orange-500/30
-        "
-      >
-        Demander une démo
-
-        <span>→</span>
-      </a>
-
-      <a
-        href="/login"
-        className="
-          inline-flex items-center gap-3
-          rounded-2xl
-          border border-slate-200
-          bg-white
-          px-8 py-5
-          text-lg font-semibold text-slate-700
-          shadow-sm
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:border-slate-300
-          hover:bg-slate-50
-          hover:shadow-lg
-        "
-      >
-        Accès plateforme
-      </a>
-    </div>
-
-    {/* STATS */}
-    <div className="mt-14 flex flex-wrap gap-10">
-
-      <div>
-        <h3 className="text-4xl font-black tracking-tight text-slate-900">
-          Multi
-        </h3>
-
-        <p className="mt-2 text-sm font-medium text-slate-500">
-          Stations
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-4xl font-black tracking-tight text-slate-900">
-          Temps réel
-        </h3>
-
-        <p className="mt-2 text-sm font-medium text-slate-500">
-          Analytics & supervision
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-4xl font-black tracking-tight text-slate-900">
-          Audit-ready
-        </h3>
-
-        <p className="mt-2 text-sm font-medium text-slate-500">
-          Traçabilité complète
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* RIGHT */}
-  <div className="space-y-6">
-
-    {/* MAIN CARD */}
-    <div
-      className="
-        relative overflow-hidden
-        rounded-[36px]
-        border border-slate-200
-        bg-gradient-to-br
-        from-white
-        via-slate-50
-        to-orange-50
-        p-8
-        shadow-xl shadow-slate-200/40
-      "
-    >
-
-      {/* GLOW */}
-      <div
-        className="
-          absolute -right-24 -top-24
-          h-72 w-72
-          rounded-full
-          bg-orange-200/20
-          blur-3xl
-        "
-      />
-
-      <div className="relative z-10">
-
-        <div className="flex items-center justify-between">
-
-          <div>
-            <p className="text-sm font-semibold text-slate-500">
-              FuelControl Enterprise
-            </p>
-
-            <h3 className="mt-2 text-3xl font-black text-slate-900">
-              Supervision Réseau
-            </h3>
-          </div>
-
-          <div
-            className="
-              rounded-2xl
-              bg-orange-100
-              px-4 py-2
-              text-sm font-bold text-orange-700
-              shadow-sm
-            "
-          >
-            Live
-          </div>
-        </div>
-
-        {/* GRID */}
-        <div className="mt-10 grid grid-cols-2 gap-5">
-
-          {[
-            {
-              label: "Stations",
-              value: "128",
-            },
-            {
-              label: "Volume réseau",
-              value: "2.4M L",
-            },
-            {
-              label: "Disponibilité",
-              value: "99.9%",
-            },
-            {
-              label: "Health score",
-              value: "Excellent",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="
-                group relative overflow-hidden
-                rounded-2xl
-                border border-white/50
-                bg-white/80
-                p-5
-                backdrop-blur-sm
-                transition-all duration-300
-                hover:-translate-y-1
-                hover:shadow-lg
-              "
-            >
-
-              <div
-                className="
-                  absolute -right-10 -top-10
-                  h-20 w-20
-                  rounded-full
-                  bg-orange-100/40
-                  blur-2xl
-                  transition-all duration-300
-                  group-hover:scale-125
-                "
-              />
-
-              <div className="relative z-10">
-
-                <p className="text-sm text-slate-500">
-                  {item.label}
-                </p>
-
-                <h4
+                <div
                   className="
-                    mt-2
-                    text-3xl
-                    font-black
-                    tracking-tight
-                    text-slate-900
+                    inline-flex items-center gap-3
+                    rounded-full
+                    border border-orange-100
+                    bg-orange-50
+                    px-5 py-2
+                    text-sm font-semibold text-orange-700
+                    shadow-sm
                   "
                 >
-                  {item.value}
-                </h4>
+                  <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
+
+                  Déploiement SaaS enterprise
+                </div>
+
+                <h2
+                  className="
+                    mt-8
+                    text-4xl md:text-5xl lg:text-6xl
+                    font-black
+                    leading-tight
+                    tracking-[-0.05em]
+                    text-slate-900
+                    md:text-7xl
+                  "
+                >
+                  Pilotez votre
+                  <span className="block text-[#F97316]">
+                    réseau de stations
+                  </span>
+                  avec FuelControl
+                </h2>
+
+                <p
+                  className="
+                    mt-8
+                    max-w-2xl
+                    text-xl
+                    leading-relaxed
+                    text-slate-600
+                  "
+                >
+                  Centralisez vos opérations,
+                  vos finances,
+                  vos dashboards,
+                  vos workflows terrain
+                  et votre supervision réseau
+                  dans une seule plateforme SaaS.
+                </p>
+
+                {/* BUTTONS */}
+                <div className="mt-12 flex flex-wrap gap-5">
+
+                  <a
+                    href="#contact"
+                    className="
+                      inline-flex items-center gap-3
+                      rounded-2xl
+                      bg-[#F97316]
+                      px-8 py-5
+                      text-lg font-bold text-white
+                      shadow-xl shadow-orange-500/20
+                      transition-all duration-300
+                      hover:-translate-y-1
+                      hover:bg-[#EA580C]
+                      hover:shadow-2xl hover:shadow-orange-500/30
+                    "
+                  >
+                    Demander une démo
+
+                    <span>→</span>
+                  </a>
+
+                  <a
+                    href="/login"
+                    className="
+                      inline-flex items-center gap-3
+                      rounded-2xl
+                      border border-slate-200
+                      bg-white
+                      px-8 py-5
+                      text-lg font-semibold text-slate-700
+                      shadow-sm
+                      transition-all duration-300
+                      hover:-translate-y-1
+                      hover:border-slate-300
+                      hover:bg-slate-50
+                      hover:shadow-lg
+                    "
+                  >
+                    Accès plateforme
+                  </a>
+                </div>
+
+                {/* STATS */}
+                <div className="mt-14 flex flex-wrap gap-10">
+
+                  <div>
+                    <h3 className="text-4xl font-black tracking-tight text-slate-900">
+                      Multi
+                    </h3>
+
+                    <p className="mt-2 text-sm font-medium text-slate-500">
+                      Stations
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-4xl font-black tracking-tight text-slate-900">
+                      Temps réel
+                    </h3>
+
+                    <p className="mt-2 text-sm font-medium text-slate-500">
+                      Analytics & supervision
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-4xl font-black tracking-tight text-slate-900">
+                      Audit-ready
+                    </h3>
+
+                    <p className="mt-2 text-sm font-medium text-slate-500">
+                      Traçabilité complète
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div className="space-y-6">
+
+                {/* MAIN CARD */}
+                <div
+                  className="
+                    relative overflow-hidden
+                    rounded-[36px]
+                    border border-slate-200
+                    bg-gradient-to-br
+                    from-white
+                    via-slate-50
+                    to-orange-50
+                    p-8
+                    shadow-xl shadow-slate-200/40
+                  "
+                >
+
+                  {/* GLOW */}
+                  <div
+                    className="
+                      absolute -right-24 -top-24
+                      h-72 w-72
+                      rounded-full
+                      bg-orange-200/20
+                      blur-3xl
+                    "
+                  />
+
+                  <div className="relative z-10">
+
+                    <div className="flex items-center justify-between">
+
+                      <div>
+                        <p className="text-sm font-semibold text-slate-500">
+                          FuelControl Enterprise
+                        </p>
+
+                        <h3 className="mt-2 text-3xl font-black text-slate-900">
+                          Supervision Réseau
+                        </h3>
+                      </div>
+
+                      <div
+                        className="
+                          rounded-2xl
+                          bg-orange-100
+                          px-4 py-2
+                          text-sm font-bold text-orange-700
+                          shadow-sm
+                        "
+                      >
+                        Live
+                      </div>
+                    </div>
+
+                    {/* GRID */}
+                    <div className="mt-10 grid grid-cols-2 gap-5">
+
+                      {[
+                        {
+                          label: "Stations",
+                          value: "128",
+                        },
+                        {
+                          label: "Volume réseau",
+                          value: "2.4M L",
+                        },
+                        {
+                          label: "Disponibilité",
+                          value: "99.9%",
+                        },
+                        {
+                          label: "Health score",
+                          value: "Excellent",
+                        },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className="
+                            group relative overflow-hidden
+                            rounded-2xl
+                            border border-white/50
+                            bg-white/80
+                            p-5
+                            backdrop-blur-sm
+                            transition-all duration-300
+                            hover:-translate-y-1
+                            hover:shadow-lg
+                          "
+                        >
+
+                          <div
+                            className="
+                              absolute -right-10 -top-10
+                              h-20 w-20
+                              rounded-full
+                              bg-orange-100/40
+                              blur-2xl
+                              transition-all duration-300
+                              group-hover:scale-125
+                            "
+                          />
+
+                          <div className="relative z-10">
+
+                            <p className="text-sm text-slate-500">
+                              {item.label}
+                            </p>
+
+                            <h4
+                              className="
+                                mt-2
+                                text-3xl
+                                font-black
+                                tracking-tight
+                                text-slate-900
+                              "
+                            >
+                              {item.value}
+                            </h4>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* STATUS */}
+                    <div
+                      className="
+                        mt-8
+                        flex items-center justify-between
+                        rounded-3xl
+                        border border-white/60
+                        bg-white/80
+                        p-6
+                        backdrop-blur-sm
+                      "
+                    >
+
+                      <div>
+                        <p className="text-sm text-slate-500">
+                          Synchronisation réseau
+                        </p>
+
+                        <h4 className="mt-2 text-xl font-black text-slate-900">
+                          Temps réel
+                        </h4>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+
+                        <div
+                          className="
+                            h-3 w-3
+                            rounded-full
+                            bg-green-500
+                            animate-pulse
+                          "
+                        />
+
+                        <span className="text-sm font-semibold text-green-700">
+                          Opérationnel
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* FLOATING */}
+                <div
+                  className="
+                    flex items-center justify-between
+                    rounded-3xl
+                    border border-slate-200
+                    bg-white
+                    p-6
+                    shadow-sm
+                    transition-all duration-300
+                    hover:-translate-y-1
+                    hover:shadow-xl
+                  "
+                >
+
+                  <div>
+                    <p className="text-sm text-slate-500">
+                      Architecture
+                    </p>
+
+                    <h4 className="mt-2 text-2xl font-black text-slate-900">
+                      Multi-tenant
+                    </h4>
+                  </div>
+
+                  <div
+                    className="
+                      rounded-2xl
+                      bg-blue-100
+                      px-5 py-3
+                      text-sm font-bold text-blue-700
+                    "
+                  >
+                    Enterprise Ready
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* STATUS */}
-        <div
-          className="
-            mt-8
-            flex items-center justify-between
-            rounded-3xl
-            border border-white/60
-            bg-white/80
-            p-6
-            backdrop-blur-sm
-          "
-        >
-
-          <div>
-            <p className="text-sm text-slate-500">
-              Synchronisation réseau
-            </p>
-
-            <h4 className="mt-2 text-xl font-black text-slate-900">
-              Temps réel
-            </h4>
-          </div>
-
-          <div className="flex items-center gap-3">
-
-            <div
-              className="
-                h-3 w-3
-                rounded-full
-                bg-green-500
-                animate-pulse
-              "
-            />
-
-            <span className="text-sm font-semibold text-green-700">
-              Opérationnel
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* FLOATING */}
-    <div
-      className="
-        flex items-center justify-between
-        rounded-3xl
-        border border-slate-200
-        bg-white
-        p-6
-        shadow-sm
-        transition-all duration-300
-        hover:-translate-y-1
-        hover:shadow-xl
-      "
-    >
-
-      <div>
-        <p className="text-sm text-slate-500">
-          Architecture
-        </p>
-
-        <h4 className="mt-2 text-2xl font-black text-slate-900">
-          Multi-tenant
-        </h4>
-      </div>
-
-      <div
-        className="
-          rounded-2xl
-          bg-blue-100
-          px-5 py-3
-          text-sm font-bold text-blue-700
-        "
-      >
-        Enterprise Ready
-      </div>
-    </div>
-  </div>
-</div>
           </div>
         </div>
       </section>
